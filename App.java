@@ -26,6 +26,7 @@ public class App {
         System.out.println("Give " + p1 + "'s next move:");
         move1 = input.nextLine();
         moveItt(move1);
+        printBoard();
     }
     
   static public void printBoard()
