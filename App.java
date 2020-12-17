@@ -14,6 +14,7 @@ public class App {
      static String C1 = "_";
      static String C2 = "_";
      static String C3 = "_";
+     static boolean win1 = false;
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -27,7 +28,7 @@ public class App {
         move1 = input.nextLine();
         moveItt(move1);
         printBoard();
-    }
+        Winner1(win1, A1, A2, A3, B1, B2, B3, C1, C2, C3);
     
   static public void printBoard()
   { 
@@ -39,36 +40,36 @@ public class App {
 
   static public void moveItt (String move1)
     {
-      move1 = move1;
-        if (move1 == A1)
+      move1.equals(move1);
+        if (move1.equals(A1))
         {
             A1 = "X";
         }
-        else if (move1 == A2)
+        else if (move1.equals( A2))
         {
             A2 = "X";
         }
-        else if (move1 == A3)
+        else if (move1.equals( A3))
         {
             A3 = "X";
         }
-        else if (move1 == B1)
+        else if (move1.equals( B1))
         {
             B1 = "X";
         }
-        else if (move1 == B2)
+        else if (move1.equals( B2))
         {
             B2 = "X";
         }
-        else if (move1 == B3)
+        else if (move1.equals( B3))
         {
             B3 = "X";
         }
-        else if (move1 == C1)
+        else if (move1.equals( C1))
         {
             C1 = "X";
         }
-        else if (move1 == C2)
+        else if (move1.equals( C2))
         {
             C2 = "X";
         }
@@ -78,4 +79,51 @@ public class App {
         }
       
     }
+  static public void Winner1 (boolean win1, String A1, String A2, String A3, String B1, String B2, String B3,  String C1, String C2, String C3,)
+  {
+    win1 = win1;
+    A1.equals(A1);
+    A2.equals(A2);
+    A3.equals(A3);
+    B1.equals(B1);
+    B2.equals(B2);
+    B3.equals(B3);
+    C1.equals(C1);
+    C2.equals(C2);
+    C3.equals(C3);
+    if (A1 && A2 && A3 != "_" || "O")
+        {
+          win1 = true;
+        }
+        else if (B1 && B2 && B3 != "_" || "O")
+        {
+          win1 = true;
+        }
+        else if (C1 && C2 && C3 != "_" || "O")
+        {
+          win1 = true;
+        }
+        else if (A1 && B1 && C1 != "_" || "O")
+        {
+          win1 = true;
+        }
+        else if (A2 && B2 && C2 != "_" || "O")
+        {
+          win1 = true;
+        }
+        else if (A3 && B3 && C3 != "_" || "O")
+        {
+          win1 = true;
+        }
+        else if (A1 && B2 && C3 != "_" || "O")
+        {
+          win1 = true;
+        }
+        else if (A3 && B2 && C != "_" || "O")
+        {
+          win1 = true;
+        }
+        else 
+    }
+  }
 }
