@@ -21,8 +21,8 @@ public class App {
     public static void main(String[] args) {
       Scanner input = new Scanner(System.in);
 //print intro
-        System.out.println("Let's play a game of tic-tac-toe" + "\nPick a slot to put your piece in using \nA1, A2, A3, B1, B2, B3, C1, C2, or C3" + "\nYou can win by claiming all A slots, all 1 slots, or A1, B2, C3 or A3, B2, or C1");
-        noWinner = true;
+        System.out.println("Let's play a game of tic-tac-toe!" + "\nPick a slot to put your piece in using \nA1, A2, A3, B1, B2, B3, C1, C2, or C3" + "\nYou can win by claiming all A slots, all 1 slots, or A1, B2, C3 or A3, B2, or C1");
+        noWinner = false;
 //create users and their names
         System.out.println("Enter player 1's name:");
         p1 = input.nextLine();
@@ -30,18 +30,19 @@ public class App {
         p2 = input.nextLine();
         System.out.println("Player 1: " + p1 + "\nPlayer 2: " + p2);
 //start while loop and game 
-      while (noWinner = true)
+      while (noWinner == false)
       {
 //player 1 plays
         System.out.println("Give " + p1 + "'s next move:");
         move1 = input.nextLine();
         moveItt(move1);
         printBoard();
-//Checks for Player 1 having won
-        Winner1(win1, A1, A2, A3, B1, B2, B3,  C1, C2, C3);
+//Checks for Player 1 having won and acts accordingly if true
+        Winner1 (win1, A1, A2, A3, B1, B2, B3, C1, C2, C3);
         if (win1 == true)
         {
           System.out.println(p1 + " has won!");
+          noWinner = true;
         }
 //player 2 plays
         System.out.println("Give " + p2 + "'s next move:");
@@ -58,9 +59,9 @@ public class App {
   public static void printBoard()
   { 
     System.out.println(" _ _ _");
-        System.out.println("|" + A1 + "|" + A2 + "|" + A3 + "|");
-        System.out.println("|" + B1 + "|" + B2 + "|" + B3 + "|");
-        System.out.println("|" + C1 + "|" + C2 + "|" + C3 + "|");
+    System.out.println("|" + A1 + "|" + A2 + "|" + A3 + "|");
+    System.out.println("|" + B1 + "|" + B2 + "|" + B3 + "|");
+    System.out.println("|" + C1 + "|" + C2 + "|" + C3 + "|");
   }
   //function for player 1's moves
   static public void moveItt (String move1)
@@ -159,38 +160,38 @@ public class App {
   C1 = C1;
   C2 = C2;
   C3 = C3;
-    //check player 1 has won with any columns
-        if ((A1.equals("X")) && (A2.equals("X")) && (A3.equals("X")))
+    //check player 1 has won with any rows
+        if ((A1.equals("x")) && (A2.equals("x")) && (A3.equals("x")))
         {
           win1 = true;
         }
-        if ((B1.equals("X")) && (B2.equals("X")) && (B3.equals("X")))
+        else if ((B1.equals("x")) && (B2.equals("x")) && (B3.equals("x")))
         {
           win1 = true;
         }
-        else if ((C1.equals("X")) && (C2.equals("X")) && (C3.equals("X")))
+        else if ((C1.equals("x")) && (C2.equals("x")) && (C3.equals("x")))
         {
           win1 = true;
         }
-    //check if player 1 has won with any rows
-        else if ((A1.equals("X")) && (B1.equals("X")) && (C1.equals("X")))
+    //check if player 1 has won with any columns
+        else if ((A1.equals("x")) && (B1.equals("x")) && (C1.equals("x")))
         {
           win1 = true;
         }
-        else if ((A2.equals("X")) && (B2.equals("X")) && (C2.equals("X")))
+        else if ((A2.equals("x")) && (B2.equals("x")) && (C2.equals("x")))
         {
           win1 = true;
         }
-        else if ((C1.equals("X")) && (C2.equals("X")) && (C3.equals("X")))
+        else if ((C1.equals("x")) && (C2.equals("x")) && (C3.equals("x")))
         {
           win1 = true;
         }
     //check is player 1 has won with any rows
-        else if ((A1.equals("X")) && (B2.equals("X")) && (C3.equals("X")))
+        else if ((A1.equals("x")) && (B2.equals("x")) && (C3.equals("x")))
         {
           win1 = true;
         }
-        else if ((A3.equals("X")) && (B2.equals("X")) && (C1.equals("X")))
+        else if ((A3.equals("x")) && (B2.equals("x")) && (C1.equals("x")))
         {
           win1 = true;
         }
@@ -198,8 +199,5 @@ public class App {
         {
           win1 = false;
         }
-    
-    
-  
     }
 }
