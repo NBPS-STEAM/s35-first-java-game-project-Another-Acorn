@@ -44,6 +44,7 @@ public class App {
         {
           System.out.println(p1 + " has won!");
           noWinner = true;
+          break;
         }
 //player 2 plays
         System.out.println("Give " + p2 + "'s next move:");
@@ -56,6 +57,7 @@ public class App {
         {
           System.out.println(p2 + " has won!");
           noWinner = true;
+          break;
         }
         //Winner1(win1, A1, A2, A3, B1, B2, B3, C1, C2, C3);  
     }
