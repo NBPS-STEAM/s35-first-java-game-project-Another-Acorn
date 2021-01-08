@@ -16,6 +16,7 @@ public class App {
      static String C3 = "_";
      static boolean noWinner = false;
      static boolean win1 = false;
+     static boolean win2 = false;
      
 
     public static void main(String[] args) {
@@ -38,7 +39,7 @@ public class App {
         moveItt(move1);
         printBoard();
 //Checks for Player 1 having won and acts accordingly if true
-        Winner1 (win1, A1, A2, A3, B1, B2, B3, C1, C2, C3);
+        Winner1();
         if (win1 == true)
         {
           System.out.println(p1 + " has won!");
@@ -49,6 +50,13 @@ public class App {
         move2 = input.nextLine();
         moveIt(move2);
         printBoard();
+//Player 2 win sequence
+        Winner2();
+        if (win2 == true)
+        {
+          System.out.println(p2 + " has won!");
+          noWinner = true;
+        }
         //Winner1(win1, A1, A2, A3, B1, B2, B3, C1, C2, C3);  
     }
 //reset game
@@ -108,7 +116,6 @@ public class App {
     //function for Player 2's move
     static public void moveIt (String move2)
     {
-     // move2.equals(move2);
         if (move2.equals("A1"))
         {
             A1 = "o";
@@ -148,18 +155,19 @@ public class App {
       
     }
 //determines whether someone has won
-  static public void Winner1 (boolean win1, String A1, String A2, String A3, String B1, String B2, String B3,  String C1, String C2, String C3)
+  //static public void Winner1 (boolean win1, String A1, String A2, String A3, String B1, String B2, String B3,  String C1, String C2, String C3)
+  static public void Winner1()
   {
-  win1 = win1;
-  A1 = A1;
-  A2 = A2;
-  A3 = A3;
-  B1 = B1;
-  B2 = B2;
-  B3 = B3;
-  C1 = C1;
-  C2 = C2;
-  C3 = C3;
+ // win1 = win1;
+ // A1 = A1;
+ // A2 = A2;
+ // A3 = A3;
+ // B1 = B1;
+ // B2 = B2;
+ // B3 = B3;
+ // C1 = C1;
+ // C2 = C2;
+ // C3 = C3;
     //check player 1 has won with any rows
         if ((A1.equals("x")) && (A2.equals("x")) && (A3.equals("x")))
         {
@@ -200,4 +208,46 @@ public class App {
           win1 = false;
         }
     }
+  static public void Winner2()
+  {
+    //check player 2 has won with any rows
+        if ((A1.equals("o")) && (A2.equals("o")) && (A3.equals("o")))
+        {
+          win2 = true;
+        }
+        else if ((B1.equals("o")) && (B2.equals("o")) && (B3.equals("o")))
+        {
+          win2 = true;
+        }
+        else if ((C1.equals("o")) && (C2.equals("o")) && (C3.equals("o")))
+        {
+          win2 = true;
+        }
+    //check if player 2 has won with any columns
+        else if ((A1.equals("o")) && (B1.equals("o")) && (C1.equals("o")))
+        {
+          win2 = true;
+        }
+        else if ((A2.equals("o")) && (B2.equals("o")) && (C2.equals("o")))
+        {
+          win2 = true;
+        }
+        else if ((C1.equals("o")) && (C2.equals("o")) && (C3.equals("o")))
+        {
+          win2 = true;
+        }
+    //check is player 2 has won with any rows
+        else if ((A1.equals("o")) && (B2.equals("o")) && (C3.equals("o")))
+        {
+          win2 = true;
+        }
+        else if ((A3.equals("o")) && (B2.equals("o")) && (C1.equals("o")))
+        {
+          win2 = true;
+        }
+        else 
+        {
+          win2 = false;
+        }
+  }
 }
