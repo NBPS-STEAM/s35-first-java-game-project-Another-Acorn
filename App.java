@@ -166,16 +166,6 @@ public class App {
 //determines whether someone has won
   static public void Winner1()
   {
- // win1 = win1;
- // A1 = A1;
- // A2 = A2;
- // A3 = A3;
- // B1 = B1;
- // B2 = B2;
- // B3 = B3;
- // C1 = C1;
- // C2 = C2;
- // C3 = C3;
     //check player 1 has won with any rows
         if ((A1.equals("x")) && (A2.equals("x")) && (A3.equals("x")))
         {
