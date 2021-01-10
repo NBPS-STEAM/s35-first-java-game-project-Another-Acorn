@@ -34,10 +34,15 @@ public class App {
       while (noWinner == false)
       {
 //player 1 plays
-        System.out.println("Give " + p1 + "'s next move:");
+        System.out.println("\nGive " + p1 + "'s next move:");
         move1 = input.nextLine();
         moveItt(move1);
         printBoard();
+//print a cute border to signal end of turn
+    for (int i = 1; i < 51; i++)
+    {
+      System.out.print("*");
+    }
 //Checks for Player 1 having won and acts accordingly if true
         Winner1();
         if (win1 == true)
@@ -47,10 +52,15 @@ public class App {
           break;
         }
 //player 2 plays
-        System.out.println("Give " + p2 + "'s next move:");
+        System.out.println("\n Give " + p2 + "'s next move:");
         move2 = input.nextLine();
         moveIt(move2);
         printBoard();
+//print a cute border to signal end of turn
+    for (int i = 1; i < 51; i++)
+    {
+      System.out.print("*");
+    }
 //Player 2 win sequence
         Winner2();
         if (win2 == true)
@@ -61,9 +71,6 @@ public class App {
         }
         //Winner1(win1, A1, A2, A3, B1, B2, B3, C1, C2, C3);  
     }
-//reset game
-    //System.out.println("Do you want to play again? (Y/N)");
-    //playAgain = input.nextBoolean(); 
   }
 //print out updated board; to be called in main code
   public static void printBoard()
@@ -157,7 +164,6 @@ public class App {
       
     }
 //determines whether someone has won
-  //static public void Winner1 (boolean win1, String A1, String A2, String A3, String B1, String B2, String B3,  String C1, String C2, String C3)
   static public void Winner1()
   {
  // win1 = win1;
